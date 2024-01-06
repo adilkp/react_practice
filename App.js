@@ -1,35 +1,55 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const heading = React.createElement("h1", {id: "heading"}, "Adil Khan !");
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img
+          className="logo"
+          src="https://img.freepik.com/premium-vector/illustration-logo-chicken-biryani-rice-served-clay-plate-with-assorted-side-dishes-spices_499212-942.jpg"
+        />
+      </div>
+      <div className="nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-console.log(heading)
+const RestaurantCard = () => {
+  return (
+    <div className="res-card">
+      <h3>Pathan Biryani</h3>
+    </div>
+  );
+};
 
-// React element
-// const jsxHeading = (
-//   <h1 className='head' tabIndex='5'>
-//     Welcome to React 🚀
-//   </h1>
-// );
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">Search</div>
+      <div className="res-container">
+        <RestaurantCard />
+      </div>
+    </div>
+  );
+};
 
-const Title = () => (
-  <h1 className='head' tabIndex='5'>
-    Welcome to React using JSX
-  </h1>
-)
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
 
-// console.log(jsxHeading)
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// React functional component
-//Component composition
-
-const HeadingComponent = () => (
-  <div id='container'>
-    <Title />
-    <h1 className='heading'>Welcome to React Functional component🚀</h1>
-  </div>
-);
-
-const root = ReactDOM.createRoot(document.getElementById("root"))
-
-root.render(<HeadingComponent />)
+root.render(<AppLayout />);
