@@ -1545,12 +1545,14 @@ const RestaurantCard = (props) => {
   );
 };
 
+// Not using keys (not acceptable) <<<< index as a key <<<<<< use unique id as a key (Best practice)
+
 const Body = () => {
   return (
     <div className="body">
       <div className="search">Search</div>
       <div className="res-container">
-        {resList.map(restaurant => <RestaurantCard resData={restaurant}/>)}
+        {resList.map(restaurant => <RestaurantCard key={restaurant.info.id} resData={restaurant}/>)}
       </div>
     </div>
   );
